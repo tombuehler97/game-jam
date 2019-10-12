@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Move(float h, float v)
     {
         movement.Set(h, v);
-        //movement = movement.normalized * speed * Time.deltaTime;
+        movement = movement.normalized * speed * Time.deltaTime;
         playerRigidbody.MovePosition(playerRigidbody.position + movement);
     }
 
