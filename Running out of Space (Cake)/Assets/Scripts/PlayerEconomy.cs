@@ -13,7 +13,8 @@ public class PlayerEconomy : MonoBehaviour
 
     private Animator anim;
     private PlayerMovement playerMovement;
-    
+
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -24,7 +25,7 @@ public class PlayerEconomy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //currentMoney = currentMoney - 0.01f;
     }
 
     public void ReceiveMoney(float sum)
