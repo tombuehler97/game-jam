@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
         //controller.Move(horizontalMove * Time.fixedDeltaTime, "h");
         //controllerMove(verticalMove * Time.fixedDeltaTime, "v");
-        Move(h, v);
         Animating(h, v);
+        Move(h, v);
     }
 
     void Move(float h, float v)
@@ -49,7 +49,28 @@ public class PlayerMovement : MonoBehaviour
 
     void Animating(float h, float v)
     {
-        bool walking = h != 0f || v != 0f;
-        anim.SetBool("IsWalking", walking);
+        bool up = false;
+        bool down = false;
+        bool right = h > 0f;
+        bool left = h < 0f;
+        //up = v > 0f;
+        if (v > 0f)
+        {
+            up = true;
+            down = false;
+        } else if (v < 0f)
+        {
+            up = false;
+            down = true;
+        }
+        //down = v < 0f;
+        
+        //bool walking = h != 0f || v != 0f;
+
+        anim.SetBool("IsWalkingRight", right);
+        anim.SetBool("IsWalkingLeft", left);
+        anim.SetBool("IsWalkingUp", up);
+        anim.SetBool("IsWalkingDown", down);
+        //anim.SetBool("IsWalking", walking);
     }
 }
