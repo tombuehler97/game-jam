@@ -8,7 +8,7 @@ public class HoboInteraction : MonoBehaviour
     private bool playerInRange;
     private GameObject player;
     public int cooldown;
-    private float cool;
+    private float cool = 0;
     public Animator anim;
     
     void Awake()
