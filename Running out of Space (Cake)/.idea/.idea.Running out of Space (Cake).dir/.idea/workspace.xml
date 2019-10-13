@@ -39,10 +39,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/DealerSell.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerEconomy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CakeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PoliceInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Garbagebin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HoboInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PoliceInteraction.cs" />
       </list>
     </option>
   </component>
