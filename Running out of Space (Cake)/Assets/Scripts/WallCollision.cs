@@ -61,7 +61,7 @@ public class WallCollision : MonoBehaviour
 
         //Player zurücksetzen um 1 pixel
 
-    }
+    
 
 
 
