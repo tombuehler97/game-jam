@@ -38,7 +38,7 @@ public class WallCollision : MonoBehaviour
             }
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log("xD1");
         //Debug.Log(other.name);
@@ -56,7 +56,7 @@ public class WallCollision : MonoBehaviour
                 pMove.speed = 0;
                 collissionMovement = pMove.movement;
 
-            }
+            }*/
             
 
         //Player zurücksetzen um 1 pixel
