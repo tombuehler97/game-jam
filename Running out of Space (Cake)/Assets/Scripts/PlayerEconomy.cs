@@ -10,6 +10,7 @@ public class PlayerEconomy : MonoBehaviour
     public int currentCakes;
     public bool broke;
     public float cakePrize = 10f;
+    public int storedCakes = 0;
 
     private Animator anim;
     private PlayerMovement playerMovement;
@@ -50,5 +51,11 @@ public class PlayerEconomy : MonoBehaviour
 
         currentCakes += count;
         currentMoney = rest;
+    }
+
+    public void StoreCakes()
+    {
+        storedCakes += currentCakes;
+        currentCakes = 0;
     }
 }
