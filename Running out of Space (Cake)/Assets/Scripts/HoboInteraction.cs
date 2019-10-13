@@ -1,0 +1,54 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HoboInteraction : MonoBehaviour
+{
+    
+    private bool playerInRange;
+    private GameObject player;
+    public int cooldown;
+    private float cool;
+    public Animator anim;
+    
+    void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<Animator>();
+    }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject == player)
+        {
+            playerInRange = true;
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject == player)
+        {
+            playerInRange = false;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Time.time > cool)
+        {
+            if (playerInRange && player.GetComponent<PlayerEconomy>().currentMoney > 0)
+            {
+                player.GetComponent<PlayerEconomy>().currentMoney = 0;
+                //GetComponent<EnemyMovement>().retreat();
+            }
+            else if (playerInRange && player.GetComponent<PlayerEconomy>().currentMoney <= 0)
+            {
+                player.GetComponent<PlayerMovement>().speed = 0;
+                anim.SetBool("IsStabbingRight", true);
+            }
+            cool = Time.time + cooldown;
+        }
+    }
+}
