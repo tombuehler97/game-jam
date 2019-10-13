@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a744f8182d0a1b349bf20f68ad6d2162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 2
+  triggerDistance: 4
   chaseingSpeed: 2
   xAxis: 0
   yAxis: 0
