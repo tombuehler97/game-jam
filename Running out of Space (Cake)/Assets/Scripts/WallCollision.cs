@@ -5,9 +5,11 @@ using UnityEngine;
 public class WallCollision : MonoBehaviour
 {
     private GameObject player;
+    private GameObject enemy;
     private Transform stopMovement;
     Rigidbody2D playerBody;
     PlayerMovement pMove;
+    EnemyMovement eMove;
     private Collider other;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,8 +22,15 @@ public class WallCollision : MonoBehaviour
             // playerBody.velocity = Vector2.zero;
             pMove = player.GetComponent<PlayerMovement>();
             pMove.movement = Vector2.zero;
+        }else
+        if (collision.gameObject.tag == "Enemy")
+        {
+            enemy= GameObject.FindGameObjectWithTag("Enemy");
+            eMove.direction = Vector2.zero;
         }
-         
+
+
+
     }
 
 
