@@ -46,7 +46,10 @@ public class HoboInteraction : MonoBehaviour
             else if (playerInRange && player.GetComponent<PlayerEconomy>().currentMoney <= 0)
             {
                 player.GetComponent<PlayerMovement>().moveable = false;
-                anim.SetBool("IsStabbingRight", true);
+                if (anim.GetBool("IsWalkingRight")) anim.SetBool("IsStabbingRight", true);
+                else if (anim.GetBool("IsWalkingLeft")) anim.SetBool("IsStabbingLeft", true);
+                anim.SetBool("IsWalkingRight", false);
+                anim.SetBool("IsWalkingLeft", false);
             }
             cool = Time.time + (float)cooldown;
         }

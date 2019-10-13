@@ -53,6 +53,8 @@ public class EnemyMovement : MonoBehaviour
                 //Debug.Log("magnitude <2");
                 isMoving = false;
                 speed = 0;
+                anim.SetBool("IsWalkingRight", false);
+                anim.SetBool("IsWalkingLeft", false);
                 //Move(new Vector2(0, 0));
                 //Vector2 moveBack=
             }
