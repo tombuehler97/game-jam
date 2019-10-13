@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 movement;
     public Animator anim;
     private Rigidbody2D playerRigidbody;
+    public bool moveable = true;
 
     public float speed = 3f;
 
@@ -32,12 +33,15 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        //controller.Move(horizontalMove * Time.fixedDeltaTime, "h");
-        //controllerMove(verticalMove * Time.fixedDeltaTime, "v");
-        Animating(h, v);
-        Move(h, v);
+        if (moveable)
+        {
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
+            //controller.Move(horizontalMove * Time.fixedDeltaTime, "h");
+            //controllerMove(verticalMove * Time.fixedDeltaTime, "v");
+            Animating(h, v);
+            Move(h, v);
+        }
     }
 
     void Move(float h, float v)

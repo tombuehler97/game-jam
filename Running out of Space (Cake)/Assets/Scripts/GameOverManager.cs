@@ -2,21 +2,22 @@
 
 public class GameOverManager : MonoBehaviour
 {
-    public PlayerEconomy playerEconomy;     
+    private PlayerMovement playerMovement;     
 
-    Animator anim;                          
-    float restartTimer;                     
+    Animator anim;            
 
 
     void Awake()
     {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();
     }
 
 
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().speed == 0)
+        Debug.Log(playerMovement.moveable);
+        if (!playerMovement.moveable)
         {
             anim.SetTrigger("GameOver");
 

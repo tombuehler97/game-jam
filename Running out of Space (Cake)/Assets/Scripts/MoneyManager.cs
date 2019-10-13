@@ -21,6 +21,6 @@ public class MoneyManager : MonoBehaviour
     void Update()
     {
         money = playerEconomy.currentMoney;
-        text.text = "" + money;
+        text.text = "" + money.ToString("F2");
     }
 }

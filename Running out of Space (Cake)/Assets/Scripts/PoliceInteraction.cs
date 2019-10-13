@@ -34,7 +34,7 @@ public class PoliceInteraction : MonoBehaviour
     {
         if (playerInRange && player.GetComponent<PlayerEconomy>().currentCakes > 0)
         {
-            player.GetComponent<PlayerMovement>().speed = 0f;
+            player.GetComponent<PlayerMovement>().moveable = false;
         }
     }
 }

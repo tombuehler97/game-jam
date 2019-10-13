@@ -11,7 +11,6 @@ public class WallCollision : MonoBehaviour
     private Collider other;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("xD");
          if (collision.gameObject.tag =="Player" )
          {
             //other = collision.collider;

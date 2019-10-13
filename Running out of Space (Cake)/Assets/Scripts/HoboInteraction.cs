@@ -45,7 +45,7 @@ public class HoboInteraction : MonoBehaviour
             }
             else if (playerInRange && player.GetComponent<PlayerEconomy>().currentMoney <= 0)
             {
-                player.GetComponent<PlayerMovement>().speed = 0;
+                player.GetComponent<PlayerMovement>().moveable = false;
                 anim.SetBool("IsStabbingRight", true);
             }
             cool = Time.time + cooldown;
