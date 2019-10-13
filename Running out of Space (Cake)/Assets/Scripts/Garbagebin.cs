@@ -7,7 +7,7 @@ public class Garbagebin : MonoBehaviour
     private GameObject player;
     public int cooldown;
     private PlayerEconomy playerEconomy;
-    public int min, max;
+    public float min, max;
     private float cool;
     private bool playerInRange;
     void Awake()
