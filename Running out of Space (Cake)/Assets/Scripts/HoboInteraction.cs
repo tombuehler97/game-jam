@@ -48,7 +48,7 @@ public class HoboInteraction : MonoBehaviour
                 player.GetComponent<PlayerMovement>().moveable = false;
                 anim.SetBool("IsStabbingRight", true);
             }
-            cool = Time.time + cooldown;
+            cool = Time.time + (float)cooldown;
         }
     }
 }
