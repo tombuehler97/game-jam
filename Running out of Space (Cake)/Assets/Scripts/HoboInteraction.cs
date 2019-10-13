@@ -36,6 +36,13 @@ public class HoboInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerInRange && player.GetComponent<PlayerMovement>().moveable == false)
+        {
+            if (anim.GetBool("IsWalkingRight")) anim.SetBool("IsStabbingRight", true);
+            else if (anim.GetBool("IsWalkingLeft")) anim.SetBool("IsStabbingLeft", true);
+            anim.SetBool("IsWalkingRight", false);
+            anim.SetBool("IsWalkingLeft", false);
+        }
         if (Time.time > cool)
         {
             if (playerInRange && player.GetComponent<PlayerEconomy>().currentMoney > 0)
@@ -46,10 +53,7 @@ public class HoboInteraction : MonoBehaviour
             else if (playerInRange && player.GetComponent<PlayerEconomy>().currentMoney <= 0)
             {
                 player.GetComponent<PlayerMovement>().moveable = false;
-                if (anim.GetBool("IsWalkingRight")) anim.SetBool("IsStabbingRight", true);
-                else if (anim.GetBool("IsWalkingLeft")) anim.SetBool("IsStabbingLeft", true);
-                anim.SetBool("IsWalkingRight", false);
-                anim.SetBool("IsWalkingLeft", false);
+                
             }
             cool = Time.time + (float)cooldown;
         }
