@@ -16,7 +16,6 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(playerMovement.moveable);
         if (!playerMovement.moveable)
         {
             anim.SetTrigger("GameOver");
