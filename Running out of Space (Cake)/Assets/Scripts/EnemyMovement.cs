@@ -56,6 +56,12 @@ public class EnemyMovement : MonoBehaviour
                 //Move(new Vector2(0, 0));
                 //Vector2 moveBack=
             }
+            
+        }
+        else
+        {
+            anim.SetBool("IsWalkingRight", false);
+            anim.SetBool("IsWalkingLeft", false);
         }
 
     }
@@ -69,15 +75,21 @@ public class EnemyMovement : MonoBehaviour
         bool down = direction.y < 0;
 
 
-        if (right || left)
-        {
+        
             anim.SetBool("IsWalkingRight", right);
             anim.SetBool("IsWalkingLeft", left);
-            
-        }
-        else if( up || down)
+
+        
+         if ((up || down) && !left && !right )
         {
-            anim.SetBool("IsWalkingRight", right);
+            anim.SetBool("IsWalkingRight", true);
+            anim.SetBool("IsWalkingLeft", false);
+        }
+        else
+        {
+          /*  anim.SetBool("IsWalkingRight", false);
+            anim.SetBool("IsWalkingLeft", false);
+            */
         }
 
 
